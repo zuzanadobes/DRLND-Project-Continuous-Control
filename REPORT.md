@@ -1,5 +1,9 @@
 ### Project criteria
 
+To train an agent to carry out specific kinds of movements.
+The policy selected for this agent to use is the "Actor Critic Policy Gradient Network" 
+The implementation uses a UnityML based agent.
+
 ### Code Framework 
 
 The code is written in PyTorch and Python 3.
@@ -15,11 +19,24 @@ This repository includes functional, well-documented, and organized code for tra
 The project includes the saved model weights of the successful agent.
 The saved model weights of the successful agent are located in the file: xxxxx
 
-### Learning Algorithm
+### Learning Algorithm: Deep Deterministic Policy Gradients (DDPG) 
 
 The report clearly describes the learning algorithm, along with the chosen hyperparameters. It also describes the model architectures for any neural networks.
 
 This project uses the DDPG algorithm with a replay buffer. 
+
+Version 1: (Udacity)
+DDPG for multiple agents.  With each step:
+- Agent updates the replay buffer with experience, sharable by all agents
+- Update the local actor and critic networks using replay buffer samples
+-- Determine an update strategy:  
+--- Every T time step ==> X times in a row (per agent) == Using Y different samples from the replay buffer.
+--- e.g. 20 times at every timestep, we amended the code to update the networks 10 times after every 20 timesteps. 
+-- Use gradient clipping when training the critic network:
+ * self.critic_optimizer.zero_grad()
+ * critic_loss.backward()
+ * torch.nn.utils.clip_grad_norm(self.critic_local.parameters(), 1)
+ * self.critic_optimizer.step()
 
 #### Configuration deployed: (sample)
 * 2 hidden layers with 512 and 256 hidden units for both actor and critic
@@ -64,5 +81,8 @@ Concrete future ideas for improving the agent's performance could include:
 (Option) 2. Better exploration
 
 ## See also
-
+You can view the publication from DeepMind here
 [ Unity Agents ] https://github.com/Unity-Technologies/ml-agents
+
+<a> <href="https://arxiv.org/pdf/1509.02971.pdf", "CONTINUOUS CONTROL WITH DEEP REINFORCEMENT
+LEARNING">/a>
