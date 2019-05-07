@@ -84,4 +84,4 @@ Concrete future ideas for improving the agent's performance could include:
 You can view the publication from DeepMind here
 [ Unity Agents ] https://github.com/Unity-Technologies/ml-agents
 
-[ CONTINUOUS CONTROL WITH DEEP REINFORCEMENT LEARNING (section 3,7 ] https://arxiv.org/pdf/1509.02971.pdf
+[ CONTINUOUS CONTROL WITH DEEP REINFORCEMENT LEARNING (section 3,7 ) https://arxiv.org/pdf/1509.02971.pdf
