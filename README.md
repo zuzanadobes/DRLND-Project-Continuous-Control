@@ -16,25 +16,20 @@ The task is episodic, and in order to solve the environment, the agent must get 
 ### Getting started
 
 Instructions for installing dependencies or downloading needed files.
-This project uses Reacher Unity environment. 
+This project uses Reacher Unity environment.  The following modules are needed:<br>
+tensorflow 1.7.1 has requirement numpy>=1.13.3, but you'll have numpy 1.12.1 which is incompatible.
+ipython 6.5.0 has requirement prompt-toolkit<2.0.0,>=1.0.15, but you'll have prompt-toolkit 2.0.9 which is incompatible.
 
 ### Instructions 
 
 A description of how to run the code in the repository, to train the agent.
 
 The project uses Jupyter Notebook.
-This command needs to be run to install the needed packages:
-
-```
-!pip -q install ./python
-```
-Running all the cells in the notebook will install it automatically.
+To install the needed packages please see the list of requirements included in the top level directory of this repo.
 
 ## Not true currently 
 The project uses Jupyter Notebook. This command needs to be run to install the needed packages:
 
-!pip -q install ./python
-Running all the cells in the notebook will install it automatically.
 
 
 Instructions
