@@ -1,6 +1,4 @@
-
-
-
+### Project criteria
 
 ### Code Framework 
 
@@ -14,6 +12,7 @@ This repository includes functional, well-documented, and organized code for tra
 
 ### Model Weights
 
+The project includes the saved model weights of the successful agent.
 The saved model weights of the successful agent are located in the file: xxxxx
 
 ### Learning Algorithm
@@ -50,14 +49,19 @@ The agent is rewarded with +1 for collecting a yellow banana, and a reward of -1
  
 ### Reward plot
 
-The number of episodes needed to solve the environment: ###
-A plot of rewards per episode is included to show rewards received as the number of episodes reaches: ###
+A plot of rewards per episode is included to illustrate that either:
+
+[version 1] the agent receives an average reward (over 100 episodes) of at least +30, or
+[version 2] the agent is able to receive an average reward (over 100 episodes, and over all 20 agents) of at least +30.
+
+(Option) The number of episodes needed to solve the environment: ###
+(Option) A plot of rewards per episode is included to show rewards received as the number of episodes reaches: ###
 
 ### Ideas for Future Work
 
 Concrete future ideas for improving the agent's performance could include:
-1. A replay buffer with some kind if prioritization scheme
-2. Better exploration
+(Option) 1. A replay buffer with some kind if prioritization scheme
+(Option) 2. Better exploration
 
 ## See also
 
