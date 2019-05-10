@@ -23,10 +23,6 @@ An agents in our experiment consists of a double-jointed arm which can move to t
 
 ### Agent Training Code
 
-This repository includes functional, well-documented, and organized code for training the agents.
-
-### Agent Training Code
-
 - Set-up: Double-jointed arm which can move to target locations.
 - Goal: Each agent must move its hand to the goal location, and keep it there.
 - Agents: The environment contains 20 agents linked to a single Brain.
@@ -121,8 +117,8 @@ Concrete future ideas for improving the agent's performance could include:
 (Option) 2. Better exploration
 
 ## Future Improvements
-There are many possible directions to try. Wish there was more time.
-I would try the D4PG algorithms (refence bellow) - this was covered by the Udacity course, and could work.  
+There are many possible directions to try. Wish there was more time. So before anything I would just try and play with the network layers, and change different aspects of the network, units per layer, or number of layers. Not enough time left to experiment. 
+I would try the D4PG algorithms (refence bellow) - this was covered by the Udacity course, and could work.  The other agorithms suggested in the Udacity couse: PPO, or D3PG.
 
 ## See also
 You can view the publication from DeepMind here
