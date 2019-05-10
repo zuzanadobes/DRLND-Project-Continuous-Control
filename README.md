@@ -5,9 +5,15 @@ Draft submission to Udacity of project code towards the completion of the nano d
 
 The project within this repository contains code for training (an) agent(s), a double-jointed arm, to move to a target locations. 
 
+Multiple agents are used, and 20 deployed agents must get an average score of +30 over all agents, over 100 consecutive episodes.
+After each episode, the scores are tabulated for each agent by adding up the rewards of each agent without any discounting. 
+The ** average score ** of all agents for each espisode is taken.
+
+The environment is considered "solved", when the average (over 100 episodes) of those average scores is at least **+30**.
+
 ### Project details
 
-A reward of +0.1 is provided for each step where an agent's hand is in the goal location. Thus, the goal of your agent is to maintain its position at the target location for as many time steps as possible.
+A reward of +0.1 is provided for each step where an agent's arm is in the goal location. Thus, the goal of your agent is to maintain its position at the target location for as many time steps as possible.
 
 The observation space consists of 33 variables corresponding to:
 - position 
@@ -42,19 +48,17 @@ Instructions for installing dependencies or downloading needed files.
     (_For AWS_) If you'd like to train the agent on AWS (and have not [enabled a virtual screen](https://github.com/Unity-Technologies/ml-agents/blob/master/docs/Training-on-Amazon-Web-Service.md)), then please use [this link](https://s3-us-west-1.amazonaws.com/udacity-drlnd/P2/Reacher/one_agent/Reacher_Linux_NoVis.zip) (version 1) or [this link](https://s3-us-west-1.amazonaws.com/udacity-drlnd/P2/Reacher/Reacher_Linux_NoVis.zip) (version 2) to obtain the "headless" version of the environment.  You will **not** be able to watch the agent without enabling a virtual screen, but you will be able to train the agent.  (_To watch the agent, you should follow the instructions to [enable a virtual screen](https://github.com/Unity-Technologies/ml-agents/blob/master/docs/Training-on-Amazon-Web-Service.md), and then download the environment for the **Linux** operating system above._)
 
 2. Place the file in your (DRLND) GitHub repository, in your working directory of your project e.g. `p2_continuous-control/` folder, and unzip (or decompress) the file.
-3. You will 
+3. All required modules for this project are listed in requirements.txt. You can load them into your project environment with the command:  conda create -n your_environment --file requirements.txt
+Mo
 - tensorflow 1.7.1 
-- numpy>=1.13.3 (instead of  1.12.1) 
-- ipython 6.5.0 
-- prompt-toolkit<2.0.0,>=1.0.15 (not prompt-toolkit 2.0.9)
+- numpy=1.16.3=pypi_0  # or numpy>=1.13.3 (instead of  1.12.1) 
+- ipython=7.5.0=pypi_0  # or ipython 6.5.0 
+- prompt-toolkit=2.0.9=pypi_0 # or prompt-toolkit<2.0.0,>=1.0.15 (not prompt-toolkit 2.0.9) 
 
 ### Instructions 
 
-The project uses Jupyter Notebook.
+The project uses Jupyter Notebook as the central walkthrough code part.
 To install the needed packages please see the list of requirements included in the top level directory of this repo.
-
-Instructions
-The project consists of 8 files:
 
 ### Repository structure
 
