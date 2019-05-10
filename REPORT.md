@@ -12,28 +12,21 @@ The specific ml-agent is called [Reacher]
 
 ### Agent Goal and Actions
 
-An agents in our experiment consists of a double-jointed arm which can move to target locations within the environment. This is
-
-- A reward of +0.1 is given out for each timestep when the agent's hand is in the goal location. 
-- The goal of your agent is to maintain the target location for as many time steps as possible.
+- Set-up: 20 Agents, common Brain, consisting of a double-jointed arm which can move to target locations.
+- Goal: Each agent must move its hand to the goal location, and keep it there.
+- Agent Reward Function (independent):
+-- A reward of +0.1 is given out for each timestep when the agent's hand is in the goal location. 
+- The goal of the agent is to maintain the target location for as many time steps as possible.
 - The agent must achieve a score of +30 averaged across all the agents for 100 consecutive episodes.
 - The Agent code performs an episodic task and achieve a score which exceeds 13 after 100 consecutive episodes. 
 - The agent needs to select actions that help it to collect as many yellow bananas as possible and avoiding blue bananas.
 - The target number of agents for our experiment is 20.
+- - Brains: Manage vector observation space and action space.
 
-### Agent Training Code
-
-- Set-up: Double-jointed arm which can move to target locations.
-- Goal: Each agent must move its hand to the goal location, and keep it there.
-- Agents: The environment contains 20 agents linked to a single Brain.
-- Agent Reward Function (independent):
-  - +0.1 for each timestep agent's hand is in goal location.
-- Brains: One Brain with the following observation/action space.
-  - Vector Observation space: 33 variables corresponding to position, rotation, velocity, and angular velocities of the two arm Rigidbodies.
-  - Vector Action space: (Continuous) Each action is a vector with four numbers, corresponding to torque applicable to two joints. Every entry in the action vector should be a number between -1 and 1.
+# Vector Observation Space
+  - 33 variables corresponding to position, rotation, velocity, and angular velocities of the two arm Rigidbodies.
   - Visual Observations: None.
-- Reset Parameters: Two, corresponding to goal size, and goal movement speed.
-- Benchmark Mean Reward: 30
+- Reset Parameters: goal size, and goal movement speed.
 
 ### Model Weights
 
@@ -49,6 +42,9 @@ This hopefully makes the solution more efficient.
 The action space in this experiment is "continuous" since the agent is executing fine range of movements, or action values, and not just four simple actions.  In the Udacity class there were a number policy-based methods introduced. We try and learn an optimal stochastic policy.   Policy-based methods directly learn the optimal policy, without having to storing and maintaining
 all action values and the value function estimatation.   
 
+Vector Action space: Each action is a vector with four numbers, corresponding to torque applicable to two joints. Every entry in the action vector should be a number between -1 and 1.
+
+
 ### Learning Algorithm: Deep Deterministic Policy Gradients (DDPG) 
 
 The report clearly describes the learning algorithm, along with the chosen hyperparameters. It also describes the model architectures for any neural networks.
@@ -60,14 +56,15 @@ DDPG:
 - Update the local actor and critic networks using replay buffer samples
 - Determine an update strategy:  
 --- Every T time step ==> X times in a row (per agent) == Using S different samples from the replay buffer.
--- Use gradient clipping when training the critic network
+-- Uses gradient clipping when training the critic network
 
 - Try various alternativ update strategies:  
 -- Every T time step ==> Update 20 times in a rown
 -- Update the networks 10 times after every 20 timesteps. 
 
 
-#### Configuration deployed: (sample)
+#### neural network configuration parameters for actor/critic  :
+Several approaches were tried, but here are my first round settings:
 * 2 hidden layers with 512 and 256 hidden units for both actor and critic
 * Replay batch size 512
 * Buffer size 1e6
@@ -78,16 +75,6 @@ DDPG:
 * Ornstein-Uhlenbeck noise
 * 20% droput for critic
 
-The Agent code is capable of executing four possible actions to help him solve the task:
-
-### Interaction with the Environment 
-
-The agent is rewarded with +1 for collecting a yellow banana, and a reward of -1 collecting a blue banana. 
-
-### State Space
-37 dimensions which includes:
-- agent’s velocity, 
-- ray-based perception of objects around the agent’s forward direction. 
  
 ### Reward plot
 
