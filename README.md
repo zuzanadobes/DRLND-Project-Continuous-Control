@@ -23,7 +23,7 @@ The task is episodic, and in order to solve the environment, the agent must get 
 
 Instructions for installing dependencies or downloading needed files.
 
-1. Download the Reacher Unity environment.  "environment" (an executable .exe file) from one of the links below.  You need only select the environment that matches your operating system:
+1. Download the Reacher Unity "environment" (an executable .exe file) from one of the links below.  You need only select the environment that matches your operating system:
 
     - **_Version 1: One (1) Agent_**
         - Linux: [click here](https://s3-us-west-1.amazonaws.com/udacity-drlnd/P2/Reacher/one_agent/Reacher_Linux.zip)
