@@ -64,21 +64,22 @@ To install the needed packages please see the list of requirements included in t
 
 The code is structured as follows:
 
-ContinuousControlProject.ipynb - run this file in Jupyter Notebook
-agent.py - the DDPG Agent class
-network.py - the Actor and Critic models
-memory.py - the replay buffer class
-noise.py - the noise class
-config.py - the configuration class for configuring the project (hyperparameters, network, optimizers etc.)
-checkpoint_critic.pth - critic trained model
-checkpoint_actor.pth - actor trained model
-Report.md - description of the implementation
+Continuous_Control.ipynb - run this file in Jupyter Notebook
+ddpg_agent.py - the DDPG Agent class and the OUNoise class and the ReplayBuffer class
+model.py - the Actor and Critic models
+results_actor_ckpt.pth - actor trained model
+critic.pth - critic trained model
+report.md - description of the first draft of the implementation.
+The configuration (hyperparameters, network, optimizers etc.) for configuring the project are located in the report.md file.
 
 Use Config() class is 
 
-### Agent Training Code
+### Agent plus Training Code
 
 This repository includes functional, well-documented, and organized code for training the agents.
+
+The ddpg_agent.py contains code for this, which is based on the version supplied by udacity:
+https://github.com/udacity/deep-reinforcement-learning/blob/55474449a112fa72323f484c4b7a498c8dc84be1/ddpg-bipedal/ddpg_agent.py 
 
 ### License
 The contents of this repository are covered under the [MIT License](LICENSE).
