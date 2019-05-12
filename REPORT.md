@@ -60,21 +60,16 @@ DDPG:
 -- Update the networks 10 times after every 20 timesteps. 
 
 
-#### Configuration of the neural network  :
+#### The neural network 
 
 The agent in our project is initialized using the hyperparameters are initialized in "model.py".
 Parameters which were most influential to the agent's performance were:  TAO and BATCHSIZE
 
 The network comprises of 2 networks:
 
-Actor: 256 -> 256 -> 
-        self.fc1 = nn.Linear(state_size, fc1_units)
-        self.fc2 = nn.Linear(fc1_units+action_size, fc2_units)
-        # added layer:
-        self.fc3 = nn.Linear(fc2_units, fc3_units)
-        self.fc4 = nn.Linear(fc3_units, 1)
+Actor: Linear, 256 units -> Linear 256 units
 
-Critic: 256 -> 256 -> 128
+Critic: Linear, 256 units  -> Linear, 256 units -> Linear, 128 units  
 
 *** Please check this ****
 In this project the underlying model consists of:
