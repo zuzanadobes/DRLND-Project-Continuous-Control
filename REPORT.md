@@ -1,26 +1,24 @@
 ### Project criteria
 
-The goal of this experiment is to multiple robotic arms to maintain contact with specific objects in the envionment (green spheres). The policy selected for this experiment for the agent to use is the "Actor Critic Policy Gradient Network" 
-The implementation uses a UnityML based agent.  
+The goal of this experiment is to multiple robotic arms to maintain contact with specific objects in the envionment (green spheres). The policy selected for this experiment for the agent to use is the "Actor Critic Policy Gradient Network". 
+The implementation uses a UnityML based agent.  The agents must get an average score of +30 (over 100 consecutive episodes, and over all agents).  After each episode, we add up the rewards that each agent received, to get their average scores, and then take the average of these.  This finally is used to compute the episode average score.  The environment is considered solved, when the average  goes over 30,  after 100 episodes.
 
 ### Code Framework 
 
 The code is written in PyTorch and Python 3.
 This repository contains code built on top of the ml-agents from Unity [ Unity Agents ].
-The specific ml-agent is called [Reacher]
+The specific environment for this project came in the form of a windows executable file,  is called [Reacher]
 (https://github.com/Unity-Technologies/ml-agents/blob/master/docs/Learning-Environment-Examples.md#reacher)
 
 ### Agent Goal and Actions
 
-- Set-up: 20 Agents, common Brain, consisting of a double-jointed arm which can move to target locations.
+- Set-up: 20 Agents, using one common Brain. Brains manage vector observation space and action space.
+- Agents correspond to a double-jointed arm which can move to target locations.
 - Goal: Each agent must move its hand to the goal location, and keep it there.
 - Agent Reward Function: A reward of +0.1 is given out for each timestep when the agent's hand is in the goal location. 
 - The goal of the agent is to maintain the target location for as many time steps as possible.
 - The single agent slution must achieve a score of +13 averaged across all the agents for 100 consecutive episodes.
-- The multiple agent solution only needs to achieve a score of 10.
-- The Agent code performs an episodic task and achieve a score which exceeds 13 after 100 consecutive episodes. 
-- The target number of agents for our experiment is 20.
-- - Brains: Manage vector observation space and action space.
+- The multiple agent solution needs to achieve a moving average score of 30 over all agents, over all episodes.
 
 # Vector Observation Space
   - 33 variables corresponding to position, rotation, velocity, and angular velocities of the two arm Rigidbodies.
@@ -57,7 +55,6 @@ DDPG:
 - Determine an update strategy:  
 --- Every T time step ==> X times in a row (per agent) == Using S different samples from the replay buffer.
 -- Uses gradient clipping when training the critic network
-
 - Try various alternativ update strategies:  
 -- Every T time step ==> Update 20 times in a rown
 -- Update the networks 10 times after every 20 timesteps. 
@@ -67,6 +64,17 @@ DDPG:
 
 The agent in our project is initialized using the hyperparameters are initialized in "model.py".
 Parameters which were most influential to the agent's performance were:  TAO and BATCHSIZE
+
+The network comprises of 2 networks:
+
+Actor: 256 -> 256 -> 
+        self.fc1 = nn.Linear(state_size, fc1_units)
+        self.fc2 = nn.Linear(fc1_units+action_size, fc2_units)
+        # added layer:
+        self.fc3 = nn.Linear(fc2_units, fc3_units)
+        self.fc4 = nn.Linear(fc3_units, 1)
+
+Critic: 256 -> 256 -> 128
 
 *** Please check this ****
 In this project the underlying model consists of:
@@ -130,4 +138,3 @@ You can view the publication from DeepMind here
 [Distributed Distributional Deterministic Policy Gradients (D4PG)]  (https://arxiv.org/abs/1804.08617)
 
 [ CONTINUOUS CONTROL WITH DEEP REINFORCEMENT LEARNING (section 3,7 ) https://arxiv.org/pdf/1509.02971.pdf
-
