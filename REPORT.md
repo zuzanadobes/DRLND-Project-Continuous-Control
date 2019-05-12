@@ -14,12 +14,11 @@ The specific ml-agent is called [Reacher]
 
 - Set-up: 20 Agents, common Brain, consisting of a double-jointed arm which can move to target locations.
 - Goal: Each agent must move its hand to the goal location, and keep it there.
-- Agent Reward Function (independent):
--- A reward of +0.1 is given out for each timestep when the agent's hand is in the goal location. 
+- Agent Reward Function: A reward of +0.1 is given out for each timestep when the agent's hand is in the goal location. 
 - The goal of the agent is to maintain the target location for as many time steps as possible.
-- The agent must achieve a score of +30 averaged across all the agents for 100 consecutive episodes.
+- The single agent slution must achieve a score of +13 averaged across all the agents for 100 consecutive episodes.
+- The multiple agent solution only needs to achieve a score of 10.
 - The Agent code performs an episodic task and achieve a score which exceeds 13 after 100 consecutive episodes. 
-- The agent needs to select actions that help it to collect as many yellow bananas as possible and avoiding blue bananas.
 - The target number of agents for our experiment is 20.
 - - Brains: Manage vector observation space and action space.
 
@@ -31,7 +30,8 @@ The specific ml-agent is called [Reacher]
 ### Model Weights
 
 The project includes the saved model weights of the successful agent.
-The saved model weights of the successful agent are located in the file: xxxxx
+The saved model weights of the successful actor are located in the file: results/results_actor_ckpt.pth'
+The saved model weights of the successful critic are located in the file: results/results_critic_ckpt.pth'
 
 ### Policy-based approach
 
