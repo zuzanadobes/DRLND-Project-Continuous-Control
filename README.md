@@ -31,34 +31,20 @@ Instructions for installing dependencies or downloading needed files.
 
 1. Download the Reacher Unity "environment" (an executable .exe file) from one of the links below.  You need only select the environment that matches your operating system:
 
-    - **_Version 1: One (1) Agent_**
-        - Linux: [click here](https://s3-us-west-1.amazonaws.com/udacity-drlnd/P2/Reacher/one_agent/Reacher_Linux.zip)
-        - Mac OSX: [click here](https://s3-us-west-1.amazonaws.com/udacity-drlnd/P2/Reacher/one_agent/Reacher.app.zip)
-        - Windows (32-bit): [click here](https://s3-us-west-1.amazonaws.com/udacity-drlnd/P2/Reacher/one_agent/Reacher_Windows_x86.zip)
-        - Windows (64-bit): [click here](https://s3-us-west-1.amazonaws.com/udacitydrlnd/P2/Reacher/one_agent/Reacher_Windows_x86_64.zip)
-
-    - **_Version 2: Twenty (20) Agents_**
+**_Twenty (20) Agents_**
         - Linux: [click here](https://s3-us-west-1.amazonaws.com/udacity-drlnd/P2/Reacher/Reacher_Linux.zip)
         - Mac OSX: [click here](https://s3-us-west-1.amazonaws.com/udacity-drlnd/P2/Reacher/Reacher.app.zip)
         - Windows (32-bit): [click here](https://s3-us-west-1.amazonaws.com/udacity-drlnd/P2/Reacher/Reacher_Windows_x86.zip)
         - Windows (64-bit): [click here](https://s3-us-west-1.amazonaws.com/udacity-drlnd/P2/Reacher/Reacher_Windows_x86_64.zip)
 
-    (_For Windows users_) Check out [this link](https://support.microsoft.com/en-us/help/827218/how-to-determine-whether-a-computer-is-running-a-32-bit-version-or-64) if you need help with determining if your computer is running a 32-bit version or 64-bit version of the Windows operating system.
-
-    (_For AWS_) If you'd like to train the agent on AWS (and have not [enabled a virtual screen](https://github.com/Unity-Technologies/ml-agents/blob/master/docs/Training-on-Amazon-Web-Service.md)), then please use [this link](https://s3-us-west-1.amazonaws.com/udacity-drlnd/P2/Reacher/one_agent/Reacher_Linux_NoVis.zip) (version 1) or [this link](https://s3-us-west-1.amazonaws.com/udacity-drlnd/P2/Reacher/Reacher_Linux_NoVis.zip) (version 2) to obtain the "headless" version of the environment.  You will **not** be able to watch the agent without enabling a virtual screen, but you will be able to train the agent.  (_To watch the agent, you should follow the instructions to [enable a virtual screen](https://github.com/Unity-Technologies/ml-agents/blob/master/docs/Training-on-Amazon-Web-Service.md), and then download the environment for the **Linux** operating system above._)
-
-2. Place the file in your (DRLND) GitHub repository, in your working directory of your project e.g. `p2_continuous-control/` folder, and unzip (or decompress) the file.
+2. Place the file in your working directory of your project e.g. `p2_continuous-control/` folder, and unzip (or decompress) the file.
 3. All required modules for this project are listed in requirements.txt. You can load them into your project environment with the command:  conda create -n your_environment --file requirements.txt
-Mo
-- tensorflow 1.7.1 
-- numpy=1.16.3=pypi_0  # or numpy>=1.13.3 (instead of  1.12.1) 
-- ipython=7.5.0=pypi_0  # or ipython 6.5.0 
-- prompt-toolkit=2.0.9=pypi_0 # or prompt-toolkit<2.0.0,>=1.0.15 (not prompt-toolkit 2.0.9) 
+
+4. Some of the modules which are required include: tensorflow, numpy, ipython=7.5.0, prompt-toolkit
 
 ### Instructions 
 
-The project uses Jupyter Notebook as the central walkthrough code part.
-To install the needed packages please see the list of requirements included in the top level directory of this repo.
+The project uses Jupyter Notebook as the central walkthrough code part, and imports code for the Agent Class, as well as the Actor and Critic python parts.
 
 ### Repository structure
 
@@ -68,7 +54,7 @@ Continuous_Control.ipynb - run this file in Jupyter Notebook
 ddpg_agent.py - the DDPG Agent class and the OUNoise class and the ReplayBuffer class
 model.py - the Actor and Critic models
 results_actor_ckpt.pth - actor trained model
-critic.pth - critic trained model
+results_critic_ckpt.pth - critic trained model
 report.md - description of the first draft of the implementation.
 The configuration (hyperparameters, network, optimizers etc.) for configuring the project are located in the report.md file.
 
