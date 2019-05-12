@@ -63,7 +63,21 @@ DDPG:
 -- Update the networks 10 times after every 20 timesteps. 
 
 
-#### neural network configuration parameters for actor/critic  :
+#### Configuration of the neural network  :
+
+The agent in our project is initialized using the hyperparameters are initialized in "model.py".
+Parameters which were most influential to the agent's performance were:  TAO and BATCHSIZE
+
+*** Please check this ****
+In this project the underlying model consists of:
+three fully connected layers with a rectified linear unit (ReLU) activation function on the first two layers and uses tanh after the third layer. First two layers are 400, 300 units in size.
+
+The critic network uses 4 fully connected layers. Interestingly the critic model from the class examples used LeakyReLU instead of regular ReLU. I wasn't sure at first why the referfence model uses Leaky ReLU as the activation but my intuition is that having positive and non zero values for the value function would be adventageous.
+
+Noise was added using an Ornstein-Uhlenbeck process (as recommended in the paper) theta and sigma were set as the same values as the paper 0.15 and 0.2 respectively.
+
+Here is the initalization of the agent and all the hyper parameters used.
+
 Several approaches were tried, but here are my first round settings:
 * 2 hidden layers with 512 and 256 hidden units for both actor and critic
 * Replay batch size 512
@@ -74,13 +88,14 @@ Several approaches were tried, but here are my first round settings:
 * Learning rate 1e-4 for actor and 3e-4 for critic
 * Ornstein-Uhlenbeck noise
 * 20% droput for critic
+*** Please check this ****
 
  
 ### Reward plot
 
 A plot of rewards per episode is included to illustrate that either:
 
-Results from the "Reacher" environment, 20 agents, goal of average above 30, 100 episodes : 
+Results from the "Reacher" environment, 20 agents, goal of average above 30, 100 episodes can be found in the analytics notebook ContinuousControl.ipynb
 
 (Option) The number of episodes needed to solve the environment: ###
 (Option) A plot of rewards per episode is included to show rewards received as the number of episodes reaches: ###
@@ -104,8 +119,9 @@ Concrete future ideas for improving the agent's performance could include:
 (Option) 2. Better exploration
 
 ## Future Improvements
-There are many possible directions to try. Wish there was more time. So before anything I would just try and play with the network layers, and change different aspects of the network, units per layer, or number of layers. Not enough time left to experiment. 
-I would try the D4PG algorithms (refence bellow) - this was covered by the Udacity course, and could work.  The other agorithms suggested in the Udacity couse: PPO, or D3PG.
+There are many possible directions to try. Wish there was more time. So before anything I would just try and play with the network layers, and change different aspects of the network, units per layer, or number of layers. Not enough time left to experiment. Other algorithms I would try, which were also covered by the Udacity cource:
+- I would try out the Proximal Policy Optimization algorithm.
+- I would try the D3G, PPO, or D4G   algorithm (refence bellow).  
 
 ## See also
 You can view the publication from DeepMind here
