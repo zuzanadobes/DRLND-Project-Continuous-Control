@@ -81,5 +81,7 @@ This repository includes functional, well-documented, and organized code for tra
 The ddpg_agent.py contains code for this, which is based on the version supplied by udacity:
 https://github.com/udacity/deep-reinforcement-learning/blob/55474449a112fa72323f484c4b7a498c8dc84be1/ddpg-bipedal/ddpg_agent.py 
 
+Some code parts inspired by sumitted from: https://github.com/tommytracey/DeepRL-P2-Continuous-Control
+
 ### License
 The contents of this repository are covered under the [MIT License](LICENSE).
