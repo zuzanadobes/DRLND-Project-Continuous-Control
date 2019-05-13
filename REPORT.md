@@ -35,7 +35,7 @@ The Reacher environment uses multiple agents, performing the same task, which ar
 - The single agent slution must achieve a score of +13 averaged across all the agents for 100 consecutive episodes.
 - The multiple agent solution needs to achieve a moving average score of 30 over all agents, over all episodes.
 
-# Action space 
+### Action space 
 
 The action space in this experiment is "continuous" since the agent is executing fine range of movements, or action values, and not just four simple actions.  In the Udacity class there were a number policy-based methods introduced. We try and learn an optimal stochastic policy.   Policy-based methods directly learn the optimal policy, without having to storing and maintaining
 all action values and the value function estimatation.   
@@ -47,6 +47,9 @@ Vector Action space: Each action is a vector with four numbers, corresponding to
 The report clearly describes the learning algorithm, along with the chosen hyperparameters. It also describes the model architectures for any neural networks.
 
 This project uses the DDPG algorithm with a replay buffer. Clearly the DQN algorithm is not sufficient to solve this problem.
+The agent is initialized using the hyperparameters are initialized in "ddpg_agent.py".
+Parameters which were most influential to the agent's performance were:  BATCHSIZE but in general it is very time consuming to measure the effects. TAO setting for the neural net also effected the outcome.
+
 
 - Set-up: 20 Agents, using one common Brain. Brains manage vector observation space and action space.
 - Agent updates the replay buffer with each experience, which is shared by all agents
@@ -54,15 +57,11 @@ This project uses the DDPG algorithm with a replay buffer. Clearly the DQN algor
 - the update strategy:  
 -- Every T time step ==> X times in a row (per agent) == Using S different samples from the replay buffer.
 --- Uses gradient clipping when training the critic network
---- various alternativ update strategies:  
----- Every T time step ==> Update 20 times in a rown
+--- I tried various alternativ update strategies - and will be more precise in the second version of this code as to the differences. In this version it was pure survival coding.
+---- Every T time steps update the network 20 times in a row
 ---- Update the networks 10 times after every 20 timesteps. 
 
-
-#### The neural network 
-
-The agent in our project is initialized using the hyperparameters are initialized in "model.py".
-Parameters which were most influential to the agent's performance were:  TAO and BATCHSIZE
+### The neural network 
 
 The network comprises of 2 networks and the settings are described in the model.py file. 
 The network architecture used by the Actor and Critic consist of three fully connected layers, with 400 units and 300 units. 
@@ -106,3 +105,5 @@ You can view the publication from DeepMind here
 [Distributed Distributional Deterministic Policy Gradients (D4PG)]  (https://arxiv.org/abs/1804.08617)
 
 [ CONTINUOUS CONTROL WITH DEEP REINFORCEMENT LEARNING (section 3,7 ) https://arxiv.org/pdf/1509.02971.pdf
+
+[ Henry Chan's git Repository ] https://github.com/kinwo/deeprl-continuous-control
