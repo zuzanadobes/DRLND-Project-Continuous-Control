@@ -31,13 +31,14 @@ Instructions for installing dependencies or downloading needed files.
 
 1. Download the Reacher Unity "environment" (an executable .exe file) from one of the links below.  You need only select the environment that matches your operating system:
 
-**_Twenty (20) Agents_**
-        - Linux: [click here](https://s3-us-west-1.amazonaws.com/udacity-drlnd/P2/Reacher/Reacher_Linux.zip)
-        - Mac OSX: [click here](https://s3-us-west-1.amazonaws.com/udacity-drlnd/P2/Reacher/Reacher.app.zip)
-        - Windows (32-bit): [click here](https://s3-us-west-1.amazonaws.com/udacity-drlnd/P2/Reacher/Reacher_Windows_x86.zip)
-        - Windows (64-bit): [click here](https://s3-us-west-1.amazonaws.com/udacity-drlnd/P2/Reacher/Reacher_Windows_x86_64.zip)
+**_Twenty (20) Agents_** Environment:
 
-2. Place the file in your working directory of your project e.g. `p2_continuous-control/` folder, and unzip (or decompress) the file.
+ - Linux: [click here](https://s3-us-west-1.amazonaws.com/udacity-drlnd/P2/Reacher/Reacher_Linux.zip)
+ - Mac OSX: [click here](https://s3-us-west-1.amazonaws.com/udacity-drlnd/P2/Reacher/Reacher.app.zip)
+ - Windows (32-bit): [click here](https://s3-us-west-1.amazonaws.com/udacity-drlnd/P2/Reacher/Reacher_Windows_x86.zip)
+ - Windows (64-bit): [click here](https://s3-us-west-1.amazonaws.com/udacity-drlnd/P2/Reacher/Reacher_Windows_x86_64.zip)
+
+2. Place the file in your working directory of your project folder, and unzip (or decompress) the file.
 3. All required modules for this project are listed in requirements.txt. You can load them into your project environment with the command:  conda create -n your_environment --file requirements.txt
 
 4. Some of the modules which are required include: tensorflow, numpy, ipython=7.5.0, prompt-toolkit
